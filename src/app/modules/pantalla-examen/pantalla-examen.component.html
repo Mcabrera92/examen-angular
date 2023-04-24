@@ -1,3 +1,32 @@
 <div class="container">
   <h2>{{tituloExamen}}</h2>
 </div>
+
+<p-toast></p-toast>
+<p-table [value]="listPokemon" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}"
+         class="card-container yellow-container overflow-hidden"
+         [paginator]="true"
+         [rows]="5"
+         [showCurrentPageReport]="true"
+         currentPageReportTemplate="Pokemon {first} to {last} of {totalRecords} total"
+         [rowsPerPageOptions]="[5, 10, 15, 20]">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-pokemon>
+    <tr>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.url }}</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="paginatorleft">
+    <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+  </ng-template>
+  <ng-template pTemplate="paginatorright">
+    <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+  </ng-template>
+  <ng-template pTemplate="summary"> Capacitacion Angular - Global Hitss</ng-template>
+</p-table>

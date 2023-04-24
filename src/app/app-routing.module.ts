@@ -4,7 +4,12 @@ import {PantallaExamenComponent} from "./modules/pantalla-examen/pantalla-examen
 
 const routes: Routes = [
   {
-    path: 'pantalla-examen',
+    path: '',
+    redirectTo: '/pokemon',
+    pathMatch: 'full'
+  },
+  {
+    path: 'pokemon',
     component: PantallaExamenComponent
   }
 ];
